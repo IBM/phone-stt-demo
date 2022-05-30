@@ -1,0 +1,78 @@
+:root {
+    --current-messages-font-size: 13px;
+    --current-messages-inner-padding: 8px;
+    --current-messages-outer-padding: 5px;
+    --current-messages-margin: 5px;
+
+    --current-message-bubble-height: calc(
+        var(--current-messages-font-size) +
+        (
+            2 *
+            var(--current-messages-inner-padding)
+        ) +
+        (
+            2 *
+            var(--current-messages-outer-padding)
+        )
+    );
+    --current-messages-height: calc(
+        (2 * var(--current-message-bubble-height)) +
+        var(--current-messages-margin)
+    );
+}
+
+
+.chat-history {
+    position: absolute;
+    overflow-y: scroll;
+    left: 0; right: 0; top: 0; bottom: var(--current-messages-height);
+    padding: 10px;
+}
+.current-messages {
+    position: absolute;
+    left: 0; right: 0; bottom: 0; top: calc(100% - var(--current-messages-height));
+}
+.chat-message {
+    border-radius: 10px;
+    padding: 10px;
+}
+.chat-history .chat-message {
+    width: 75%;
+    margin-bottom: 20px;
+    color: white;
+}
+.chat-history .chat-message.caller {
+    margin-left: calc(25% - 20px);
+}
+.current-messages {
+    padding: var(--current-messages-outer-padding);
+}
+.current-messages .chat-message {
+    white-space: nowrap;
+    overflow-y: hidden;
+    direction: rtl;
+    text-overflow: ellipsis;
+    padding: var(--current-messages-inner-padding);
+    margin: var(--current-messages-margin);
+    color: #777777;
+    font-size: var(--current-messages-font-size);
+    min-height: 15px;
+}
+
+.chat-history .timestamp {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.chat-history .chat-message.caller {
+    background-color: darkblue;
+}
+.chat-history .chat-message.receiver {
+    background-color: darkgreen;
+}
+.current-messages .chat-message.caller {
+    background-color: lightblue;
+}
+.current-messages .chat-message.receiver {
+    background-color: lightgreen;
+}

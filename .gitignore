@@ -1,0 +1,9 @@
+# npm dependencies
+/node_modules
+# code coverage
+/coverage
+/.nyc_output
+# MacOS Finder files
+.DS_Store
+# private files
+local/

@@ -1,0 +1,128 @@
+{
+    "you are such an amazing person": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {
+            "server": "watson-gateway",
+            "content-length": "312",
+            "content-type": "application/json; charset=utf-8",
+            "cache-control": "no-cache, no-store",
+            "x-dp-watson-tran-id": "6452a4ca-cc12-47a6-9b93-c2fe2acda301, 6452a4ca-cc12-47a6-9b93-c2fe2acda301",
+            "content-security-policy": "default-src 'none'",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-xss-protection": "1; mode=block",
+            "strict-transport-security": "max-age=31536000; includeSubDomains;",
+            "x-request-id": "6452a4ca-cc12-47a6-9b93-c2fe2acda301",
+            "x-global-transaction-id": "6452a4ca-cc12-47a6-9b93-c2fe2acda301",
+            "x-edgeconnect-midmile-rtt": "90",
+            "x-edgeconnect-origin-mex-latency": "291",
+            "date": "Fri, 27 May 2022 10:38:25 GMT",
+            "connection": "close"
+        },
+        "result": {
+            "usage": {
+                "text_units": 1,
+                "text_characters": 31,
+                "features": 1
+            },
+            "language": "en",
+            "emotion": {
+                "document": {
+                    "emotion": {
+                        "sadness": 0.017323,
+                        "joy": 0.998513,
+                        "fear": 0.002391,
+                        "disgust": 0.005603,
+                        "anger": 0.009652
+                    }
+                }
+            }
+        }
+    },
+    "you are such an amazing person. i love everything that you do. i'm so grateful for all of your work. you rock.": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {
+            "server": "watson-gateway",
+            "content-length": "313",
+            "content-type": "application/json; charset=utf-8",
+            "cache-control": "no-cache, no-store",
+            "x-dp-watson-tran-id": "6858d591-2f06-468b-8563-78540a099479, 6858d591-2f06-468b-8563-78540a099479",
+            "content-security-policy": "default-src 'none'",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-xss-protection": "1; mode=block",
+            "strict-transport-security": "max-age=31536000; includeSubDomains;",
+            "x-request-id": "6858d591-2f06-468b-8563-78540a099479",
+            "x-global-transaction-id": "6858d591-2f06-468b-8563-78540a099479",
+            "x-edgeconnect-midmile-rtt": "92",
+            "x-edgeconnect-origin-mex-latency": "223",
+            "date": "Fri, 27 May 2022 10:39:55 GMT",
+            "connection": "close"
+        },
+        "result": {
+            "usage": {
+                "text_units": 1,
+                "text_characters": 110,
+                "features": 1
+            },
+            "language": "en",
+            "emotion": {
+                "document": {
+                    "emotion": {
+                        "sadness": 0.039175,
+                        "joy": 0.961437,
+                        "fear": 0.017076,
+                        "disgust": 0.017718,
+                        "anger": 0.018321
+                    }
+                }
+            }
+        }
+    },
+    "you are such an amazing person\ni love everything that you do\ni'm so grateful for all of your work\nyou rock": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {
+            "server": "watson-gateway",
+            "content-length": "313",
+            "content-type": "application/json; charset=utf-8",
+            "cache-control": "no-cache, no-store",
+            "x-dp-watson-tran-id": "3072dd7f-a33a-4a25-9f9f-7eebf16da307, 3072dd7f-a33a-4a25-9f9f-7eebf16da307",
+            "content-security-policy": "default-src 'none'",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-xss-protection": "1; mode=block",
+            "strict-transport-security": "max-age=31536000; includeSubDomains;",
+            "x-request-id": "3072dd7f-a33a-4a25-9f9f-7eebf16da307",
+            "x-global-transaction-id": "3072dd7f-a33a-4a25-9f9f-7eebf16da307",
+            "x-edgeconnect-midmile-rtt": "90",
+            "x-edgeconnect-origin-mex-latency": "233",
+            "date": "Fri, 27 May 2022 10:33:51 GMT",
+            "connection": "close"
+        },
+        "result": {
+            "usage": {
+                "text_units": 1,
+                "text_characters": 110,
+                "features": 1
+            },
+            "language": "en",
+            "emotion": {
+                "document": {
+                    "emotion": {
+                        "sadness": 0.039175,
+                        "joy": 0.951437,
+                        "fear": 0.017076,
+                        "disgust": 0.017718,
+                        "anger": 0.018321
+                    }
+                }
+            }
+        }
+    }
+}

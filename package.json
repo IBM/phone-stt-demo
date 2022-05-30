@@ -1,0 +1,42 @@
+{
+  "name": "phone-stt-demo",
+  "description": "Sample app to show how to use Watson Speech to Text with phone calls from Twilio",
+  "keywords": [
+    "twilio",
+    "watson",
+    "ibmwatson",
+    "stt",
+    "speech-to-text"
+  ],
+  "version": "0.0.1",
+  "author": "Dale Lane <dale.lane@uk.ibm.com>",
+  "homepage": "https://github.ibm.com/TechnologyGarageUKI/phone-stt-demo",
+  "bugs": {
+    "url": "https://github.ibm.com/TechnologyGarageUKI/phone-stt-demo/issues"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "lint": "eslint app.js lib/*.js",
+    "unittest": "mocha lib/*.spec.js",
+    "test": "npm run lint && npm audit && npm run unittest",
+    "coverage": "nyc npm run unittest"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-ws": "^5.0.2",
+    "ibm-watson": "^7.0.0",
+    "loglevel": "^1.8.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "eslint": "^8.16.0",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "sinon": "^14.0.0",
+    "supertest": "^6.2.3",
+    "superwstest": "^2.0.2"
+  }
+}

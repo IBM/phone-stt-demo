@@ -1,0 +1,43 @@
+.analysis {
+    padding: 0;
+}
+
+.analysis .who {
+    color: white;
+    padding: 3px;
+    font-size: 12px;
+}
+
+.analysis.caller .who {
+    background-color: darkblue;
+}
+.analysis.receiver .who {
+    background-color: darkgreen;
+}
+
+.analysis .data {
+    padding: 3px 8px;
+    margin-bottom: 16px;
+}
+.analysis .data .metric {
+    margin-bottom: 4px;
+}
+.analysis .data .name {
+    font-size: 11px;
+}
+
+.analysis .data .barchart {
+    width: 100%;
+    height: 15px;
+    border: thin #aaaaaa solid;
+}
+.analysis .data .barchart .value {
+    height: 100%;
+}
+
+.analysis.caller .data .barchart .value {
+    background-color: lightblue;
+}
+.analysis.receiver .data .barchart .value {
+    background-color: lightgreen;
+}

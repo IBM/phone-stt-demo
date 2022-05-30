@@ -1,0 +1,22 @@
+.call {
+    border: thin black solid;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.call .call-id {
+    font-size: 9px;
+    margin-bottom: 10px;
+}
+
+.call .timestamp {
+    font-size: 18px;
+}
+
+.call.selected {
+    background-color: #465050;
+    color: white;
+    border: none;
+    cursor: default;
+}

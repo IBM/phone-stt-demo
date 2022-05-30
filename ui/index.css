@@ -1,0 +1,29 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: aliceblue;
+    margin: 0;
+}
+
+.app-window {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+.app-column {
+    padding: 0;
+    margin: 5px;
+    background-color: white;
+    border: thin black solid;
+    position: relative;
+}
+.app-column.small {
+    flex-grow: 1;
+}
+.app-column.medium {
+    flex-grow: 3;
+}
+.app-column.wide {
+    flex-grow: 9;
+    padding: 10px;
+}
+

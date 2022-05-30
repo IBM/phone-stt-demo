@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="index.css" rel="stylesheet">
+        <link href="list.css" rel="stylesheet">
+        <link href="chat.css" rel="stylesheet">
+        <link href="analysis.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="app-window">
+            <!-- ---------------------------------------------------- -->
+            <!-- This is the left-hand column that displays a list of -->
+            <!-- the phone calls that have been made.                 -->
+            <!--                                                      -->
+            <!-- Clicking on a call in this list will display the     -->
+            <!-- details on the rest of the page.                     -->
+            <!-- ---------------------------------------------------- -->
+            <div class="app-column small">
+                <div class="call-list" id="calls-list"></div>
+            </div>
+            <!-- ---------------------------------------------------- -->
+            <!-- This is the centre column that displays the          -->
+            <!-- transcript for the currently selected phone call.    -->
+            <!-- ---------------------------------------------------- -->
+            <div class="app-column wide">
+                <!-- previous things that callers have said -->
+                <div class="chat-history" id="chat-history"></div>
+                <!-- live view of what the callers are currently saying -->
+                <div class="current-messages">
+                    <div class="chat-message caller" id="current-message-caller"></div>
+                    <div class="chat-message receiver" id="current-message-receiver"></div>
+                </div>
+            </div>
+            <!-- ---------------------------------------------------- -->
+            <!-- This is the right-hand column that displays an       -->
+            <!-- analysis of the words used in the currently selected -->
+            <!-- phone call.                                          -->
+            <!-- ---------------------------------------------------- -->
+            <div class="app-column medium">
+                <div class="analyses">
+                    <!-- analysis of what the person who made the phone call has said -->
+                    <div class="analysis caller">
+                        <div class="who">Caller</div>
+                        <div class="data">
+                            <div class="metric">
+                                <div class="name">anger</div>
+                                <div class="barchart">
+                                    <div id="analysis-caller-anger" class="value" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="name">disgust</div>
+                                <div class="barchart">
+                                    <div id="analysis-caller-disgust" class="value" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="name">fear</div>
+                                <div class="barchart">
+                                    <div id="analysis-caller-fear" class="value" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="name">joy</div>
+                                <div class="barchart">
+                                    <div id="analysis-caller-joy" class="value" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="name">sadness</div>
+                                <div class="barchart">
+                                    <div id="analysis-caller-sadness" class="value" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- analysis of what the person who received the phone call has said -->
+                    <div class="analysis receiver">
+                        <div class="who">Receiver</div>
+                        <div class="data">
+                            <div class="metric">
+                                <div class="name">anger</div>
+                                <div class="barchart">
+                                    <div id="analysis-receiver-anger" class="value" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="name">disgust</div>
+                                <div class="barchart">
+                                    <div id="analysis-receiver-disgust" class="value" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="name">fear</div>
+                                <div class="barchart">
+                                    <div id="analysis-receiver-fear" class="value" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="name">joy</div>
+                                <div class="barchart">
+                                    <div id="analysis-receiver-joy" class="value" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="name">sadness</div>
+                                <div class="barchart">
+                                    <div id="analysis-receiver-sadness" class="value" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
