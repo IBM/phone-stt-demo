@@ -271,7 +271,7 @@ ibmcloud ce application get \
 
 This will give you a URL like `https://phone-stt-demo.abcdefg1a2b.eu-gb.codeengine.appdomain.cloud`.
 
-Take the hostname (e.g. `phone-stt-demo.abcdefg1a2b.eu-gb.codeengine.appdomain.cloud`) and use it as the `REPLACE-THIS-HOSTNAME` value in following the [Twilio setup instructions](./twilio-setup/instructions.md).
+Use this as the `REPLACE-THIS-URL` value in following the [Twilio setup instructions](./twilio-setup/instructions.md).
 
 ---
 

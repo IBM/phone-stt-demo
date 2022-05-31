@@ -2,6 +2,7 @@ const express = require('express');
 const log = require('loglevel');
 const api = require('./lib/api');
 const nlu = require('./lib/nlu');
+const twilio = require('./lib/twilio');
 const phoneToStt = require('./lib/phone-to-stt');
 const env = require('./lib/env');
 
@@ -19,6 +20,7 @@ const PORT = 8080;
 
 phoneToStt.init();
 nlu.init();
+twilio.init();
 api.setup(app);
 
 log.info('server will listen on', PORT);

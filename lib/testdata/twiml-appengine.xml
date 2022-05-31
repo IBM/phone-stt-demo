@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Start>
+    <Stream url="wss://phone-stt-demo.abcdefg1h2i.eu-gb.codeengine.appdomain.cloud/ws/caller"   track="inbound_track"/>
+  </Start>
+  <Start>
+    <Stream url="wss://phone-stt-demo.abcdefg1h2i.eu-gb.codeengine.appdomain.cloud/ws/receiver" track="outbound_track"/>
+  </Start>
+  <Dial>
+    +442380613733
+  </Dial>
+  <Pause length="40"/>
+</Response>

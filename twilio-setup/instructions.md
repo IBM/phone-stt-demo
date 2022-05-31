@@ -86,22 +86,18 @@ Here is a suggested configuration:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Start>
-    <Stream url="wss://REPLACE-THIS-HOSTNAME/ws/caller" track="inbound_track"/>
-  </Start>
-  <Start>
-    <Stream url="wss://REPLACE-THIS-HOSTNAME/ws/receiver" track="outbound_track"/>
-  </Start>
-  <Dial>
-    REPLACE-THIS-NUMBER
-  </Dial>
-  <Pause length="40" />
+  <Gather
+    action="REPLACE-THIS-URL/api/twimlbin"
+    method="GET">
+        <Say>
+			Please dial the phone number that you want to call, followed by pound
+        </Say>
+  </Gather>
+  <Say>You didn't provide a number. Goodbye.</Say>
 </Response>
 ```
 
-Replace `REPLACE-THIS-HOSTNAME` with the URL for where you are running the application.
-
-Replace `REPLACE-THIS-NUMBER` with the phone number that you want to direct phone calls to.
+Replace `REPLACE-THIS-URL` with the URL for where you are running the application.
 
 ![setup call routing](./screenshot-34.png)
 

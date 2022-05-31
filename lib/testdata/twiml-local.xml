@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Start>
+    <Stream url="wss://localhost/ws/caller"   track="inbound_track"/>
+  </Start>
+  <Start>
+    <Stream url="wss://localhost/ws/receiver" track="outbound_track"/>
+  </Start>
+  <Dial>
+    +441231112345
+  </Dial>
+  <Pause length="40"/>
+</Response>
