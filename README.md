@@ -4,7 +4,7 @@
 
 # Transcribe a phone call in real-time
 
-In this code pattern, we will transcribe and analyze what is said on a phone call using IBM Watson Speech to Text, IBM Watson Natural Language Understanding and Twilio.
+In this code pattern, we will transcribe and analyze what is said on a phone call using [IBM Watson Speech to Text](https://cloud.ibm.com/catalog/services/speech-to-text), [IBM Watson Natural Language Understanding](https://cloud.ibm.com/catalog/services/natural-language-understanding) and [Twilio](https://www.twilio.com).
 
 When you have completed this code pattern, you will understand how to:
 
@@ -14,20 +14,16 @@ When you have completed this code pattern, you will understand how to:
 
 ## Flow
 
-1. One person should make a phone call
-    - We'll call this person "the caller".
-    - They call a phone number managed by Twilio.
-2. Twilio routes the phone call to another person
-    - We'll call this person "the receiver".
-    - They should answer the phone call.
+1. One person makes a phone call to a phone number managed by Twilio [(more details)](./doc/FLOW-DETAILS.md#1---collecting-the-phone-number-to-connect-to)
+2. Twilio routes the phone call to the receiver, who answers the call [(more details)](./doc/FLOW-DETAILS.md#2---connecting-the-call)
 
 The caller and receiver can start talking to each other.
 While they are doing this...
 
-3. Twilio streams a copy of the audio from the phone call to your application
-4. Your application sends audio to the Speech to Text service for transcribing
-5. The Speech to Text service asynchronously calls the app with transcriptions when they are available
-6. The app submits the transcription text to Natural Language Understanding for analysis
+3. Twilio streams a copy of the audio from the phone call to your application [(more details)](./doc/FLOW-DETAILS.md#3---forwarding-call-audio-to-the-application)
+4. Your application sends audio to the Speech to Text service for transcribing [(more details)](./doc/FLOW-DETAILS.md#4---sending-call-audio-to-speech-to-text)
+5. Speech to Text asynchronously sends transcriptions to the app when they are available [(more details)](./doc/FLOW-DETAILS.md#5---receiving-transcriptions-from-speech-to-text)
+6. The app submits the transcription text to Natural Language Understanding for analysis [(more details)](./doc/FLOW-DETAILS.md#6---analyzing-transcriptions)
 7. The transcriptions and analyses can be monitored from a web page
 
 ---
@@ -272,6 +268,17 @@ ibmcloud ce application get \
 This will give you a URL like `https://phone-stt-demo.abcdefg1a2b.eu-gb.codeengine.appdomain.cloud`.
 
 Use this as the `REPLACE-THIS-URL` value in following the [Twilio setup instructions](./twilio-setup/instructions.md).
+
+
+### 10. Try it out!
+
+Open the URL from [step 9](#9-point-a-twilio-phone-number-at-your-deployed-application) in a web browser.
+
+Make a phone call to the Twilio phone number.
+
+When prompted, enter the phone number that you want to call, **including** the international dialling code for the country the phone number is in.
+
+(For example, to call the UK phone number 02079463287, you should enter `442079463287` when prompted.)
 
 ---
 
