@@ -14,16 +14,16 @@ When you have completed this code pattern, you will understand how to:
 
 ## Flow
 
-1. One person makes a phone call to a phone number managed by Twilio [(more details)](./doc/FLOW-DETAILS.md#1---collecting-the-phone-number-to-connect-to)
-2. Twilio routes the phone call to the receiver, who answers the call [(more details)](./doc/FLOW-DETAILS.md#2---connecting-the-call)
+1. One person makes a phone call to a phone number managed by Twilio _[(more details)](./doc/FLOW-DETAILS.md#1---collecting-the-phone-number-to-connect-to)_
+2. Twilio routes the phone call to the receiver, who answers the call _[(more details)](./doc/FLOW-DETAILS.md#2---connecting-the-call)_
 
-The caller and receiver can start talking to each other.
+The caller and receiver start talking to each other.
 While they are doing this...
 
-3. Twilio streams a copy of the audio from the phone call to your application [(more details)](./doc/FLOW-DETAILS.md#3---forwarding-call-audio-to-the-application)
-4. Your application sends audio to the Speech to Text service for transcribing [(more details)](./doc/FLOW-DETAILS.md#4---sending-call-audio-to-speech-to-text)
-5. Speech to Text asynchronously sends transcriptions to the app when they are available [(more details)](./doc/FLOW-DETAILS.md#5---receiving-transcriptions-from-speech-to-text)
-6. The app submits the transcription text to Natural Language Understanding for analysis [(more details)](./doc/FLOW-DETAILS.md#6---analyzing-transcriptions)
+3. Twilio streams a copy of the audio from the phone call to your application _[(more details)](./doc/FLOW-DETAILS.md#3---forwarding-call-audio-to-the-application)_
+4. Your application sends audio to the Speech to Text service for transcribing _[(more details)](./doc/FLOW-DETAILS.md#4---sending-call-audio-to-speech-to-text)_
+5. Speech to Text asynchronously sends transcriptions to the app when they are available _[(more details)](./doc/FLOW-DETAILS.md#5---receiving-transcriptions-from-speech-to-text)_
+6. The app submits the transcription text to Natural Language Understanding for analysis _[(more details)](./doc/FLOW-DETAILS.md#6---analyzing-transcriptions)_
 7. The transcriptions and analyses can be monitored from a web page
 
 ---
@@ -45,13 +45,14 @@ IBM_CLOUD_REGION=eu-gb
 
 1. [Log into IBM Cloud](#1-log-into-ibm-cloud)
 2. [Create a project in IBM Code Engine](#2-create-ibm-code-engine-project)
-3. [Create an API key for the Watson services used in this project](#3-create-ibm-watson-credentials)
+3. [Create API keys for Watson services used in this project](#3-create-ibm-watson-credentials)
 4. [Clone the source code](#4-clone-the-repo)
 5. [Build the application image](#5-build-the-application-image)
 6. [Push the application image to a container registry](#6-push-the-application-image-to-a-container-registry)
 7. [Create a pull secret for the image](#7-create-a-pull-secret-for-the-application-image)
 8. [Deploy the application](#8-deploy-the-application)
 9. [Configure Twilio to use your application](#9-point-a-twilio-phone-number-at-your-deployed-application)
+10. [Make a phone call](#10-try-it-out)
 
 
 ### 1. Log into IBM Cloud
@@ -67,7 +68,7 @@ If you do not have a Code Engine project, create one
 ibmcloud ce project create --name $CODE_ENGINE_PROJECT_NAME
 ```
 
-Target the project
+If you already have a Code Engine project, target the project
 ```sh
 ibmcloud ce project target --name $CODE_ENGINE_PROJECT_NAME
 ```
@@ -85,6 +86,8 @@ ibmcloud resource service-instance-create \
     $IBM_CLOUD_REGION
 ```
 
+_This creates a free instance of the service, which should be sufficient for trying this project. See the [catalog page](https://cloud.ibm.com/catalog/services/speech-to-text) for more details about the limitations._
+
 Create an API key for your Speech to Text instance
 ```sh
 ibmcloud resource service-key-create \
@@ -101,6 +104,8 @@ STT_INSTANCE_URL=$(ibmcloud resource service-key code-engine-stt-credentials  --
 echo "Speech to Text : API key : $STT_API_KEY"
 echo "Speech to Text : URL     : $STT_INSTANCE_URL"
 ```
+
+_This uses [jq](https://stedolan.github.io/jq/) to extract the API key and URL. If you don't want to use `jq`, you can simply run `ibmcloud resource service-key code-engine-stt-credentials  --output json` and create environment variables with the API key and URL from the credentials that are output._
 
 Create a Secret with the API key and instance URL
 ```sh
@@ -121,6 +126,8 @@ ibmcloud resource service-instance-create \
     $IBM_CLOUD_REGION
 ```
 
+_This creates a free instance of the service, which should be sufficient for trying this project. See the [catalog page](https://cloud.ibm.com/catalog/services/natural-language-understanding) for more details about the limitations._
+
 Create an API key for your Natural Language Understanding instance
 ```sh
 ibmcloud resource service-key-create \
@@ -137,6 +144,8 @@ NLU_INSTANCE_URL=$(ibmcloud resource service-key code-engine-nlu-credentials  --
 echo "Natural Language Understanding : API key : $NLU_API_KEY"
 echo "Natural Language Understanding : URL     : $NLU_INSTANCE_URL"
 ```
+
+_This uses [jq](https://stedolan.github.io/jq/) to extract the API key and URL. If you don't want to use `jq`, you can simply run `ibmcloud resource service-key code-engine-stt-credentials  --output json` and create environment variables with the API key and URL from the credentials that are output._
 
 Create a Secret with the API key and instance URL
 ```sh
@@ -165,7 +174,7 @@ docker build -t phone-stt-demo:latest .
 
 You can push the application image to any container registry that you like.
 
-The instructions in this step explain how to use the IBM Container Registry, using the [IBM Cloud CLI with the Container Registry plugin](https://cloud.ibm.com/docs/Registry?topic=container-registry-cli-plugin-containerregcli).
+The instructions in this step explain how to use the IBM Cloud Container Registry, using the [IBM Cloud CLI with the Container Registry plugin](https://cloud.ibm.com/docs/Registry?topic=container-registry-cli-plugin-containerregcli).
 
 Set the following environment variables in your shell for use in the commands below
 ```sh
@@ -198,7 +207,7 @@ docker push $IMAGE_LOCATION
 
 The way to do this depends on the container registry that you are using.
 
-The instructions in this step assume that you are using the IBM Container Registry.
+The instructions in this step assume that you are using the [IBM Cloud Container Registry](https://cloud.ibm.com/docs/Registry?topic=Registry-registry_overview).
 
 Create an API key with permission to pull your images from the container registry.
 ```sh
@@ -217,7 +226,7 @@ ibmcloud iam service-api-key-create  \
     --description "API key for the phone-stt-demo-pull-secret service ID used by Code Engine"
 ```
 
-This will create an API key which will be displayed only once. You should make a copy of it as it cannot be retrieved after it has been created.
+_This will create an API key which will be displayed only once. You should make a copy of it as it cannot be retrieved after it has been created._
 
 Set an environment variable with the API key
 ```sh
