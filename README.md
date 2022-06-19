@@ -4,11 +4,18 @@
 
 # Transcribe a phone call in real-time
 
-In this code pattern, we will transcribe and analyze what is said on a phone call using [IBM Watson Speech to Text](https://cloud.ibm.com/catalog/services/speech-to-text), [IBM Watson Natural Language Understanding](https://cloud.ibm.com/catalog/services/natural-language-understanding) and [Twilio](https://www.twilio.com).
+Do your customers or users use the telephone? What sort of discussions do you have on the phone?
+
+Would their phone calls be more efficient if you could transcribe what is said on the call? What if you could analyze the transcription using natural language understanding? And what if you could do all of this in real-time, while the call is still on-going?
+
+Analysis of unstructured data, such as the audio from phone calls, can bring many benefits: such as providing guidance to people on the phone to help make their call more effective, prioritising users who would benefit from additional support, or identifying other automated actions that can be taken in response to phone call discussions. Specific responses vary depending on use cases, but all such solutions have one thing in common: the need to transcribe and analyze transcriptions in real-time.
+
+This code pattern shows developers how to stream phone call audio through [IBM Watson Speech to Text](https://cloud.ibm.com/catalog/services/speech-to-text) and [IBM Watson Natural Language Understanding](https://cloud.ibm.com/catalog/services/natural-language-understanding) services.
 
 When you have completed this code pattern, you will understand how to:
 
 * use IBM Watson Speech to Text to transcribe audio in real-time
+* use IBM Watson Natural Language Understanding to perform analysis on transcriptions in real-time
 
 ![architecture](doc/source/images/architecture.png)
 
