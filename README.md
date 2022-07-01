@@ -1,7 +1,3 @@
-**TEMPORARY LOCATION:** Once published, this repository will be moved to github.com/IBM
-
----
-
 # Transcribe a phone call in real-time
 
 Do your customers or users use the telephone? What sort of discussions do you have on the phone?
@@ -35,17 +31,11 @@ While they are doing this...
 
 ---
 
-## Watch the Video
-
-TODO : RECORD DEMO VIDEO
-
----
-
 ## Steps
 
 Set the following environment variables in your shell for use in the commands below
 ```sh
-CODE_ENGINE_PROJECT_NAME=voice-agent-copilot
+CODE_ENGINE_PROJECT_NAME=my-phone-stt-demo-project
 CODE_ENGINE_APP_NAME=phone-stt-demo
 IBM_CLOUD_REGION=eu-gb
 ```
@@ -167,7 +157,7 @@ ibmcloud ce secret create \
 Clone the `phone-stt-demo` repo locally. In a terminal, run:
 
 ```sh
-git clone https://github.ibm.com/TechnologyGarageUKI/phone-stt-demo
+git clone https://github.com/IBM/phone-stt-demo
 cd phone-stt-demo
 ```
 

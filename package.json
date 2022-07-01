@@ -10,9 +10,9 @@
   ],
   "version": "0.0.1",
   "author": "Dale Lane <dale.lane@uk.ibm.com>",
-  "homepage": "https://github.ibm.com/TechnologyGarageUKI/phone-stt-demo",
+  "homepage": "https://github.com/IBM/phone-stt-demo",
   "bugs": {
-    "url": "https://github.ibm.com/TechnologyGarageUKI/phone-stt-demo/issues"
+    "url": "https://github.com/IBM/phone-stt-demo/issues"
   },
   "engines": {
     "node": "16.x"
