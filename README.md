@@ -15,6 +15,12 @@ When you have completed this code pattern, you will understand how to:
 
 ![architecture](doc/source/images/architecture.png)
 
+## Demo
+
+[![video recording of the code pattern in action](./doc/source/images/video-demo-thumbnail.png)](https://youtu.be/So3b4uJGaBw)
+
+[video recording of the code pattern in action : youtu.be/So3b4uJGaBw](https://youtu.be/So3b4uJGaBw)
+
 ## Flow
 
 1. One person makes a phone call to a phone number managed by Twilio _[(more details)](./doc/FLOW-DETAILS.md#1---collecting-the-phone-number-to-connect-to)_
